@@ -1,0 +1,38 @@
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.app-wrapper {
+  display: grid;
+  grid-template-areas: "h h" "n m";
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  grid-area: h;
+  background-color: green;
+  padding: 10px;
+}
+
+.header img{
+  width: 100px;
+}
+
+.nav {
+  grid-area: n;
+  background-color: red;
+}
+
+.main {
+  grid-area: m;
+  background-color: blanchedalmond;
+}
+.main__cover img{
+  width: 100%;
+}
