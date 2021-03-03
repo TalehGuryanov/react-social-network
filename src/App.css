@@ -14,25 +14,7 @@
   margin: 0 auto;
 }
 
-.header {
-  grid-area: h;
-  background-color: green;
-  padding: 10px;
-}
-
-.header img{
-  width: 100px;
-}
-
-.nav {
-  grid-area: n;
-  background-color: red;
-}
-
-.main {
+.app-wrapper__content {
   grid-area: m;
   background-color: blanchedalmond;
-}
-.main__cover img{
-  width: 100%;
 }
