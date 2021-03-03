@@ -1,0 +1,20 @@
+.content {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogs {
+  flex-basis: 30%;
+  background-color: cadetblue;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
+
+.messages {
+  flex-basis: 70%;
+  background-color: rgb(196, 242, 253);
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+}
