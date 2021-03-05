@@ -1,4 +1,6 @@
-
+.posts {
+  padding: 10px;
+}
 .post__new {
   display: flex;
 }

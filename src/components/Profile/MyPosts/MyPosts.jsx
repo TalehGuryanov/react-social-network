@@ -2,9 +2,13 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+  debugger;
+  let postsElem = props.postsData.map(item => <Post id={item.id} message={item.message} likesCount={item.likesCount}/>)
+
   return (
-    <div>
+    <div className={s.posts}>
         my posts
 
       <div className={s.post__new}>
@@ -14,9 +18,7 @@ const MyPosts = () => {
         <button type="button" className={s.post__btn}>Add post</button>
       </div>
       <div>
-        <Post message="hi" likesCount="15"/>
-        <Post message="my first post" likesCount="4"/>
-        <Post message="my second post" likesCount="23"/>
+        {postsElem}
       </div>
     </div>
   )
