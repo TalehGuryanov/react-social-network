@@ -3,11 +3,11 @@ import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => {
-  debugger;
+
   return (
     <main>
         <ProfileInfo />
-        <MyPosts postsData={props.postsData}/>
+        <MyPosts postsData={props.state.postsData}/>
     </main>
   )
 }

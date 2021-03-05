@@ -1,0 +1,14 @@
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -5px;
+}
