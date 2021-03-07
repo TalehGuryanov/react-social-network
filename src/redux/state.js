@@ -1,4 +1,4 @@
-import {renderDom} from '../render';
+let renderDom = null;
 
 let state = {
   messagesPage: {
@@ -35,14 +35,19 @@ let state = {
 
 window.state = state
 
-export let updateNewPostText = (newtext) => {
+export const updateNewPostText = (newtext) => {
   state.profilePage.newPostText = newtext
-  renderDom(state, addPost, updateNewPostText);
+  renderDom();
 }
 
-export let addPost = () => {
+export const addPost = () => {
 
-  let id = state.profilePage.postsData.length + 1
+  if(state.profilePage.newPostText === '' ) {
+    alert('Введите текст');
+    return;
+  }
+
+  let id = state.profilePage.postsData.length + 1;
 
   let newPost = {
     id: id,
@@ -53,7 +58,11 @@ export let addPost = () => {
   state.profilePage.postsData.push(newPost);
   state.profilePage.newPostText = '';
   
-  renderDom(state, addPost, updateNewPostText);
+  renderDom();
+}
+
+export const subscribe = (observer) => {
+  renderDom = observer;
 }
 
 export default state;
