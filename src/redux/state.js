@@ -1,3 +1,5 @@
+import {renderDom} from '../render';
+
 let state = {
   messagesPage: {
     dialogs: [
@@ -20,6 +22,7 @@ let state = {
       {id: 2, message:'my first post', likesCount: 50},
       {id: 3, message:'my second post', likesCount: 23},
     ],
+    newPostText: '',
   },
   sidebar: {
     friends: [
@@ -28,6 +31,29 @@ let state = {
       {id: 3, name:'Viki', img: 'https://primadonnamagazine.com/wp-content/uploads/2017/08/wellness-smile-woman.jpg'}
     ]
   }
+}
+
+window.state = state
+
+export let updateNewPostText = (newtext) => {
+  state.profilePage.newPostText = newtext
+  renderDom(state, addPost, updateNewPostText);
+}
+
+export let addPost = () => {
+
+  let id = state.profilePage.postsData.length + 1
+
+  let newPost = {
+    id: id,
+    message: state.profilePage.newPostText,
+    likesCount: 0
+  };
+
+  state.profilePage.postsData.push(newPost);
+  state.profilePage.newPostText = '';
+  
+  renderDom(state, addPost, updateNewPostText);
 }
 
 export default state;

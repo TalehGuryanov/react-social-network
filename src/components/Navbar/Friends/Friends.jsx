@@ -3,8 +3,6 @@ import FriendsItem from './FriendsItem/FriendsItem';
 
 const Friends = (props) => {
 
-  console.log(props)
-
   let friendsItem = props.friends
     .map(item => <FriendsItem name={item.name} img={item.img}/>)
 
