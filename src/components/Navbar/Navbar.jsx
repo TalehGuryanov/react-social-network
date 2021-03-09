@@ -33,7 +33,7 @@ const Navbar = (props) => {
             </NavLink>
           </li>
         </ul>
-        <Friends friends={props.state.friends}/>
+        <Friends friends={props.sidebar.friends}/>
       </nav>
   )
 }

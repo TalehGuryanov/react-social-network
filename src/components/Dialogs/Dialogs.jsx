@@ -4,10 +4,10 @@ import MessagesItem from './MessagesItem/MessagesItem';
 
 const Dialogs = (props) => {
 
-  let dialogsElem = props.state.dialogs
+  let dialogsElem = props.messagesPage.dialogs
     .map(item => <DialogsItem id={item.id} name={item.name}/>)
 
-  let messagesElem = props.state.messages
+  let messagesElem = props.messagesPage.messages
     .map(item => <MessagesItem id={item.id} message={item.message}/>)
 
   return (

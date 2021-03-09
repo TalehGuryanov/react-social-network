@@ -11,24 +11,21 @@ import { Route } from 'react-router-dom';
 
 
 function App(props) {
-
   return (
     <div className='app-wrapper'>
       <Header/>
-      <Navbar state={props.state.sidebar}/>
+      <Navbar sidebar={props.store.getState().sidebar}/>
       <div className='app-wrapper__content'>
         <Route path="/profile" 
           render={() => 
             <Profile 
-              profilePage={props.state.profilePage}
-              addPost={props.addPost}
-              updateNewPostText={props.updateNewPostText}
+              store={props.store}
             />}
         />
         <Route path="/dialogs" 
           render={() => 
             <Dialogs 
-              state={props.state.messagesPage} 
+              messagesPage={props.store.getState().messagesPage} 
             />}
         />
         <Route path="/news" render={() => <News />}/>
