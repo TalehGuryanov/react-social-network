@@ -18,3 +18,17 @@
   padding: 10px;
   list-style: none;
 }
+
+.old {
+  margin-bottom: 20px;
+}
+.new textarea {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  height: 80px;
+}
+.new button {
+  width: 100px;
+  height: 40px;
+}
