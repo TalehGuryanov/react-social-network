@@ -18,18 +18,20 @@ export const profileReducer = (state = initialState, action) => {
 
       if(state.newPostText === '' ) {
         alert('Введите текст');
-        return;
+
+      } else {
+        
+        let id = state.postsData.length + 1;
+        let newPost = {
+          id: id,
+          message: state.newPostText,
+          likesCount: 0
+        };
+  
+        state.postsData.push(newPost);
+        state.newPostText = '';
       }
 
-      let id = state.postsData.length + 1;
-      let newPost = {
-        id: id,
-        message: state.newPostText,
-        likesCount: 0
-      };
-
-      state.postsData.push(newPost);
-      state.newPostText = '';
       return state;
     
     case UPDATE_NEW_POST_TEXT:
