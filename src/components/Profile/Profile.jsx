@@ -10,8 +10,7 @@ const Profile = (props) => {
         <MyPosts 
           postsData={props.store.getState().profilePage.postsData}
           newPostText={props.store.getState().profilePage.newPostText}
-          addPost={props.store.addPost.bind(props.store)}
-          updateNewPostText={props.store.updateNewPostText.bind(props.store)}
+          dispatch={props.store.dispatch.bind(props.store)}
         />
     </main>
   )

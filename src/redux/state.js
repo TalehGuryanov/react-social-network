@@ -1,3 +1,7 @@
+import { sideBarReducer } from './sidebarReducer';
+import { messagesReducer } from './messagesReducer';
+import { profileReducer } from './profileReducer';
+
 let store ={
 
   _state : {
@@ -14,7 +18,8 @@ let store ={
         {id: 1, message:'HI'},
         {id: 2, message:'How are you?'},
         {id: 3, message:'By'},
-      ]
+      ],
+      newMessageText: '',
     },
     profilePage: {
       postsData: [
@@ -33,42 +38,24 @@ let store ={
     }
   },
 
-  getState() {
-    return this._state
-  },
-
-  updateNewPostText (newtext) {
-    this._state.profilePage.newPostText = newtext
-    this._callSubscriber();
-  },
-
   _callSubscriber() {
     console.log('state changed');
   },
 
-  addPost() {
-
-    if(this._state.profilePage.newPostText === '' ) {
-      alert('Введите текст');
-      return;
-    }
-  
-    let id = this._state.profilePage.postsData.length + 1;
-  
-    let newPost = {
-      id: id,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0
-    };
-  
-    this._state.profilePage.postsData.push(newPost);
-    this._state.profilePage.newPostText = '';
-    
-    this._callSubscriber();
+  getState() {
+    return this._state
   },
 
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  dispatch(action) {
+
+    profileReducer(this._state.profilePage, action);
+    messagesReducer(this._state.messagesPage, action);
+    sideBarReducer(this._state, action);
+    this._callSubscriber();
   }
 }
 

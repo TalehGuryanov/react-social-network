@@ -26,6 +26,7 @@ function App(props) {
           render={() => 
             <Dialogs 
               messagesPage={props.store.getState().messagesPage} 
+              dispatch={props.store.dispatch.bind(props.store)}
             />}
         />
         <Route path="/news" render={() => <News />}/>
