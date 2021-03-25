@@ -52,9 +52,9 @@ let store ={
 
   dispatch(action) {
 
-    profileReducer(this._state.profilePage, action);
-    messagesReducer(this._state.messagesPage, action);
-    sideBarReducer(this._state, action);
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+    this._state.sidebar = sideBarReducer(this._state, action);
     this._callSubscriber();
   }
 }

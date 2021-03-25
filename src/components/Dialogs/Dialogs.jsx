@@ -14,13 +14,11 @@ const Dialogs = (props) => {
 
   let onSendMessageClick = () => {
     props.dispatch(sendMessageActionCreator());
-    console.log(props.messagesPage)
   }
 
   let onNewMessageChange = (e) => {
     let body = e.target.value
     props.dispatch(updateNewMessageBodyActionCreator(body));
-    console.log(props.messagesPage)
   }
 
   return (
