@@ -14,19 +14,15 @@ function App(props) {
   return (
     <div className='app-wrapper'>
       <Header/>
-      <Navbar sidebar={props.store.getState().sidebar}/>
+      <Navbar />
       <div className='app-wrapper__content'>
         <Route path="/profile" 
           render={() => 
-            <Profile 
-              store={props.store}
-            />}
+            <Profile />}
         />
         <Route path="/dialogs" 
           render={() => 
-            <DialogsContainer 
-              store={props.store}
-            />}
+            <DialogsContainer />}
         />
         <Route path="/news" render={() => <News />}/>
         <Route path="/music" render={() => <Music />}/>

@@ -28,7 +28,7 @@ export const profileReducer = (state = initialState, action) => {
           likesCount: 0
         };
   
-        state.postsData.push(newPost);
+        state.postsData.unshift(newPost);
         state.newPostText = '';
       }
 
