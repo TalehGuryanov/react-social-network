@@ -5,26 +5,21 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import StoreContext from './StoreContext'
+import {Provider} from 'react-redux'
 
-let renderDom = () => {
 
-  ReactDOM.render(
-    <BrowserRouter>
-      <React.StrictMode>
-        <StoreContext.Provider value={store}>
-          <App />
-        </StoreContext.Provider>
-      </React.StrictMode>
-    </BrowserRouter>,
-    document.getElementById('root')
-  );
+ReactDOM.render(
+  <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>,
+  document.getElementById('root')
+);
 
-}
 
-renderDom();
-
-store.subscribe(renderDom);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

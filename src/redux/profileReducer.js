@@ -14,34 +14,29 @@ export const profileReducer = (state = initialState, action) => {
 
   switch (action.type) {
 
-    case ADD_POST:
-
-      if(state.newPostText === '' ) {
-        alert('Введите текст');
-
-      } else {
-        
-        let id = state.postsData.length + 1;
-        let newPost = {
-          id: id,
-          message: state.newPostText,
-          likesCount: 0
-        };
-  
-        state.postsData.unshift(newPost);
-        state.newPostText = '';
+    case UPDATE_NEW_POST_TEXT: {
+      return {
+        ...state,
+        newPostText: action.newText
       }
+    }
 
-      return state;
-    
-    case UPDATE_NEW_POST_TEXT:
+    case ADD_POST: {
+
+      let id = state.postsData.length + 1;
+      let body = state.newPostText;
+      let newPost = { id: id, message: body,likesCount: 0 }
       
-      state.newPostText = action.newText
-      return state;
-    
+      return {
+        ...state,
+        postsData: [newPost, ...state.postsData],
+        newPostText: ''
+      }
+    }
+
     default: 
       return state;
-  }
+  } 
 }
 
 export const addPostActionCreator = () => ({type: ADD_POST});
