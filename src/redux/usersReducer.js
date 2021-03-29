@@ -3,52 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-  users: [
-    {
-      id: 1, 
-      fullName:'Anna', 
-      status:'I am a boss', 
-      location: {
-        city: 'Minsk', 
-        country: 'Belarus'
-      }, 
-      img: 'https://www.pinclipart.com/picdir/middle/257-2575057_slime-icons-clipart.png',
-      followed: true
-    },
-    {
-      id: 2, 
-      fullName:'Liza', 
-      status:'Nice day', 
-      location: {
-        city: 'Moskow', 
-        country: 'Russia'
-      }, 
-      img: 'https://www.pinclipart.com/picdir/middle/257-2575057_slime-icons-clipart.png',
-      followed: true
-    },
-    {
-      id: 3, 
-      fullName:'Luiz', 
-      status:'DDD', 
-      location: {
-        city: 'Paris', 
-        country: 'France'
-      }, 
-      img: 'https://www.pinclipart.com/picdir/middle/257-2575057_slime-icons-clipart.png',
-      followed: false
-    },
-    {
-      id: 4, 
-      fullName:'Markus', 
-      status:'I like soccer', 
-      location: {
-        city: 'New York', 
-        country: 'USA'
-      }, 
-      img: 'https://www.pinclipart.com/picdir/middle/257-2575057_slime-icons-clipart.png',
-      followed: false
-    },
-  ],
+  users: [],
 }
 
 export const usersReducer = (state = initialState, action) => {
@@ -77,7 +32,7 @@ export const usersReducer = (state = initialState, action) => {
       }
     
     case SET_USERS:
-      return {...state, user: [...state.users, ...action.users]}
+      return {...state, users: [...state.users, ...action.users]}
 
     default: 
     return state;
