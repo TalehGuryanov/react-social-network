@@ -33,3 +33,7 @@
   height: 50px;
   border-radius: 50%;
 }
+
+.selected_page {
+  font-weight: 700;
+}
