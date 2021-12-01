@@ -14,6 +14,7 @@ const Dialogs = (props) => {
     .map(item => <MessagesItem id={item.id} message={item.message}/>)
 
   let onSendMessageClick = () => {
+    debugger;
     props.sendMessage();
   }
 
