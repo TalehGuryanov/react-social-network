@@ -1,0 +1,26 @@
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  margin-right: 10px;
+}
+
+.img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.text {
+  margin-right: 30px;
+}
+
+.like {
+  background-color: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  padding: 3px 5px;
+}
